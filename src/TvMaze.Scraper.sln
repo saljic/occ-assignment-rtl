@@ -1,6 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebApiTemplate", "TestWebApiTemplate\TestWebApiTemplate.csproj", "{8AB0F668-657A-4D76-88A0-85A95739E199}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.Scraper.WebHost", "TvMaze.Scraper.WebHost\TvMaze.Scraper.WebHost.csproj", "{8AB0F668-657A-4D76-88A0-85A95739E199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.Scraper.Core", "TvMaze.Scraper.Core\TvMaze.Scraper.Core.csproj", "{2B8BCE6D-09AF-4B77-9DBF-3F6E958A4DF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.Scraper.Api", "TvMaze.Scraper.Api\TvMaze.Scraper.Api.csproj", "{B6EAC7F3-A362-4895-9839-B71E11F1C6E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.Scraper.App", "TvMaze.Scraper.App\TvMaze.Scraper.App.csproj", "{3F9ED119-2806-4051-9B01-98E47B07CC43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Deployment", "1. Deployment", "{CB0663B1-B3CA-4C8E-BFBE-3E8D7098B3BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. App", "2. App", "{497779A9-A03A-4F16-A8E5-73AEF397F0AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +22,23 @@ Global
 		{8AB0F668-657A-4D76-88A0-85A95739E199}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AB0F668-657A-4D76-88A0-85A95739E199}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AB0F668-657A-4D76-88A0-85A95739E199}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B8BCE6D-09AF-4B77-9DBF-3F6E958A4DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8BCE6D-09AF-4B77-9DBF-3F6E958A4DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8BCE6D-09AF-4B77-9DBF-3F6E958A4DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8BCE6D-09AF-4B77-9DBF-3F6E958A4DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6EAC7F3-A362-4895-9839-B71E11F1C6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6EAC7F3-A362-4895-9839-B71E11F1C6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6EAC7F3-A362-4895-9839-B71E11F1C6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6EAC7F3-A362-4895-9839-B71E11F1C6E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F9ED119-2806-4051-9B01-98E47B07CC43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F9ED119-2806-4051-9B01-98E47B07CC43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F9ED119-2806-4051-9B01-98E47B07CC43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F9ED119-2806-4051-9B01-98E47B07CC43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8AB0F668-657A-4D76-88A0-85A95739E199} = {CB0663B1-B3CA-4C8E-BFBE-3E8D7098B3BC}
+		{B6EAC7F3-A362-4895-9839-B71E11F1C6E3} = {497779A9-A03A-4F16-A8E5-73AEF397F0AE}
+		{3F9ED119-2806-4051-9B01-98E47B07CC43} = {497779A9-A03A-4F16-A8E5-73AEF397F0AE}
+		{2B8BCE6D-09AF-4B77-9DBF-3F6E958A4DF8} = {497779A9-A03A-4F16-A8E5-73AEF397F0AE}
 	EndGlobalSection
 EndGlobal

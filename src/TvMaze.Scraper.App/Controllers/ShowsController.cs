@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using TestWebApiTemplate;
 
-namespace TestWebApiTemplate.Controllers;
+namespace TvMaze.Scraper.App.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
