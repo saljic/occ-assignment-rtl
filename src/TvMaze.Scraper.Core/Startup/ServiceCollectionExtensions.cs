@@ -1,6 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Refit;
-using TestWebApiTemplate;
+using TvMaze.Scraper.Api.Repositories;
+using TvMaze.Scraper.Core.External;
+using TvMaze.Scraper.Core.Factories;
+using TvMaze.Scraper.Core.Repositories;
+using TvMaze.Scraper.Core.Services;
 
 namespace TvMaze.Scraper.Core.Startup;
 

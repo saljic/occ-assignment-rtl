@@ -1,4 +1,6 @@
-﻿namespace TestWebApiTemplate;
+﻿using TvMaze.Scraper.Api.DomainModels;
+
+namespace TvMaze.Scraper.Api.Repositories;
 
 public interface IShowRepository
 {

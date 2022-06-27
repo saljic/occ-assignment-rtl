@@ -1,4 +1,4 @@
-﻿namespace TestWebApiTemplate;
+﻿namespace TvMaze.Scraper.Api.DomainModels;
 
 public sealed class Show
 {

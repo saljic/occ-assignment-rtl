@@ -2,8 +2,11 @@
 using Polly;
 using Polly.Retry;
 using Refit;
+using TvMaze.Scraper.Api.Repositories;
+using TvMaze.Scraper.Core.External;
+using TvMaze.Scraper.Core.Factories;
 
-namespace TestWebApiTemplate;
+namespace TvMaze.Scraper.Core.Services;
 
 public sealed class ScrapingService : IScrapingService
 {

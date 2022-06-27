@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using TestWebApiTemplate;
+using TvMaze.Scraper.App.Converters;
 
 namespace TvMaze.Scraper.App.Startup;
 

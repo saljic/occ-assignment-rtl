@@ -2,8 +2,9 @@
 using System.Reactive.Linq;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TvMaze.Scraper.Core.Services;
 
-namespace TestWebApiTemplate;
+namespace TvMaze.Scraper.Core;
 
 public sealed class DailyScrapingService : BackgroundService
 {

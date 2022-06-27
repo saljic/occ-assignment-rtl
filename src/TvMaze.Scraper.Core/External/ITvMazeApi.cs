@@ -1,6 +1,7 @@
 ﻿using Refit;
+using TvMaze.Scraper.Core.External.Data;
 
-namespace TestWebApiTemplate;
+namespace TvMaze.Scraper.Core.External;
 
 public interface ITvMazeApi
 {

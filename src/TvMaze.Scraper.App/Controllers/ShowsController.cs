@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using TestWebApiTemplate;
+using TvMaze.Scraper.Api.Repositories;
+using TvMaze.Scraper.App.Converters;
+using TvMaze.Scraper.App.Data.Dtos;
 
 namespace TvMaze.Scraper.App.Controllers;
 

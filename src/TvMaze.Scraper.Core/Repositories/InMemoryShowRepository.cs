@@ -1,6 +1,8 @@
 ﻿using System.Collections.Concurrent;
+using TvMaze.Scraper.Api.DomainModels;
+using TvMaze.Scraper.Api.Repositories;
 
-namespace TestWebApiTemplate;
+namespace TvMaze.Scraper.Core.Repositories;
 
 public sealed class InMemoryShowRepository : IShowRepository
 {
