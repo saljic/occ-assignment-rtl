@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using TvMaze.Scraper.Api.Pagination;
 using TvMaze.Scraper.Api.Repositories;
 using TvMaze.Scraper.App.Converters;
 using TvMaze.Scraper.App.Data.Dtos;
@@ -29,19 +30,13 @@ public sealed class ShowsController : ControllerBase
         }
         
         var shows = await _showRepository.GetAllAsync();
-        var showsList = shows.ToArray();
 
-        var lastItemIndex = (paginationQuery.PageIndex + 1) * paginationQuery.ItemCount;
-        var firstItemIndex = paginationQuery.PageIndex * paginationQuery.ItemCount;
-
-        if (firstItemIndex > showsList.Length)
-        {
-            return Ok(ArraySegment<ShowDto>.Empty);
-        }
-        
-        lastItemIndex = lastItemIndex > showsList.Length ? showsList.Length : lastItemIndex;
-
-        var retVal = showsList[firstItemIndex..lastItemIndex];
-        return Ok(retVal.Select(_showConverter.Convert));
+        return Ok(shows
+            .AsQueryable()
+            .OrderBy(x => x.Id)
+            .Skip(paginationQuery.PageIndex * paginationQuery.ItemCount)
+            .Take(paginationQuery.ItemCount)
+            .ToArray()
+            .Select(_showConverter.Convert));
     }
 }
