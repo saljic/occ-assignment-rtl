@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using TvMaze.Scraper.Api.DomainModels;
 using TvMaze.Scraper.Api.Repositories;
 using TvMaze.Scraper.App.Converters;
 using TvMaze.Scraper.App.Data.Dtos;
@@ -11,13 +12,13 @@ namespace TvMaze.Scraper.App.Controllers;
 [ApiController]
 public sealed class ShowsController : ControllerBase
 {
-    private readonly IShowConverter _showConverter;
+    private readonly IDataConverter<Show, ShowDto> _showDataConverter;
     private readonly IShowRepository _showRepository;
 
-    public ShowsController(IShowRepository showRepository, IShowConverter showConverter)
+    public ShowsController(IShowRepository showRepository, IDataConverter<Show, ShowDto> showDataConverter)
     {
         _showRepository = showRepository;
-        _showConverter = showConverter;
+        _showDataConverter = showDataConverter;
     }
 
     [HttpGet(Name = "GetShows")]
@@ -36,6 +37,6 @@ public sealed class ShowsController : ControllerBase
             .Skip(paginationQuery.PageIndex * paginationQuery.ItemCount)
             .Take(paginationQuery.ItemCount)
             .ToArray()
-            .Select(_showConverter.Convert));
+            .Select(_showDataConverter.Convert));
     }
 }
