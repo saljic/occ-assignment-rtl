@@ -40,7 +40,7 @@ public sealed class ShowsController : ControllerBase
             .OrderBy(x => x.Id)
             .Skip(paginationQuery.PageIndex * paginationQuery.ItemCount)
             .Take(paginationQuery.ItemCount)
-            .ToArray()
-            .Select(_showDataConverter.Convert));
+            .Select(_showDataConverter.Convert)
+            .ToArray());
     }
 }
