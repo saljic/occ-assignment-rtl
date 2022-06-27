@@ -6,6 +6,10 @@ using TvMaze.Scraper.Core.Services;
 
 namespace TvMaze.Scraper.Core;
 
+/// <summary>
+///     The <see cref="DailyScrapingService" /> background service will run on startup the of application and scrape the tv
+///     maze api on a daily basis
+/// </summary>
 public sealed class DailyScrapingService : BackgroundService
 {
     private readonly ILogger<DailyScrapingService> _logger;

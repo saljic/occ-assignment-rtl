@@ -21,14 +21,18 @@ public sealed class ShowsController : ControllerBase
         _showDataConverter = showDataConverter;
     }
 
+    /// <summary>
+    ///     Returns a paginated list of <see cref="ShowDto" />
+    ///     <example>
+    ///         /api/shows?PageIndex=1&ItemCount=10
+    ///     </example>
+    /// </summary>
     [HttpGet(Name = "GetShows")]
     public async Task<IActionResult> Get([FromQuery] PaginationQuery paginationQuery)
     {
         if (paginationQuery.PageIndex < 0 || paginationQuery.ItemCount <= 0)
-        {
             return BadRequest(ArraySegment<ShowDto>.Empty);
-        }
-        
+
         var shows = await _showRepository.GetAllAsync();
 
         return Ok(shows

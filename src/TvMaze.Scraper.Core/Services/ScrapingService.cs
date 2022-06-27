@@ -12,13 +12,14 @@ namespace TvMaze.Scraper.Core.Services;
 public sealed class ScrapingService : IScrapingService
 {
     private const int SECONDS_BEFORE_RETRY = 11;
+    private readonly ILogger<ScrapingService> _logger;
     private readonly AsyncRetryPolicy _retryTooManyRequestsPolicy;
     private readonly IShowFactory _showFactory;
     private readonly IShowRepository _showRepository;
-    private readonly ILogger<ScrapingService> _logger;
     private readonly ITvMazeApi _tvMazeApi;
 
-    public ScrapingService(ITvMazeApi tvMazeApi, IShowFactory showFactory, IShowRepository showRepository, ILogger<ScrapingService> logger)
+    public ScrapingService(ITvMazeApi tvMazeApi, IShowFactory showFactory, IShowRepository showRepository,
+        ILogger<ScrapingService> logger)
     {
         _tvMazeApi = tvMazeApi;
         _showFactory = showFactory;
@@ -41,8 +42,8 @@ public sealed class ScrapingService : IScrapingService
             foreach (var tvMazeShow in tvMazeShows)
             {
                 var tvMazeCast = await _retryTooManyRequestsPolicy
-                     .ExecuteAsync(async () => await _tvMazeApi.GetCast(tvMazeShow.Id));
-                
+                    .ExecuteAsync(async () => await _tvMazeApi.GetCast(tvMazeShow.Id));
+
                 var show = _showFactory.Create(tvMazeShow, tvMazeCast);
                 await _showRepository.AddOrUpdateAsync(show);
             }

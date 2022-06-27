@@ -7,15 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TvMaze.Scraper.Api\TvMaze.Scraper.Api.csproj" />
+        <ProjectReference Include="..\TvMaze.Scraper.Api\TvMaze.Scraper.Api.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
-      <PackageReference Include="Polly" Version="7.2.3" />
-      <PackageReference Include="Refit.HttpClientFactory" Version="6.3.2" />
-      <PackageReference Include="System.Reactive" Version="5.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0"/>
+        <PackageReference Include="Polly" Version="7.2.3"/>
+        <PackageReference Include="Refit.HttpClientFactory" Version="6.3.2"/>
+        <PackageReference Include="System.Reactive" Version="5.0.0"/>
     </ItemGroup>
 
 </Project>

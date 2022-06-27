@@ -11,9 +11,3 @@ public sealed class ShowDataConverter : IDataConverter<Show, ShowDto>
         return new ShowDto(show.Id, show.Name, castDto);
     }
 }
-
-public sealed class DefaultDataConverter<TDomain, TData> : IDataConverter<TDomain, TData>
-{
-    public TData Convert(TDomain domainModel) =>
-        throw new InvalidOperationException($"No data converter registered for {typeof(TDomain)}");
-}
