@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using TvMaze.Scraper.Api.Pagination;
 using TvMaze.Scraper.Api.Repositories;
 using TvMaze.Scraper.App.Converters;
 using TvMaze.Scraper.App.Data.Dtos;
