@@ -1,4 +1,5 @@
 ﻿using System.Reactive;
+using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -14,19 +15,21 @@ public sealed class DailyScrapingService : BackgroundService
 {
     private readonly ILogger<DailyScrapingService> _logger;
     private readonly IScrapingService _scrapingService;
+    private readonly IScheduler _scheduler;
 
-    public DailyScrapingService(IScrapingService scrapingService, ILogger<DailyScrapingService> logger)
+    public DailyScrapingService(IScrapingService scrapingService, IScheduler scheduler, ILogger<DailyScrapingService> logger)
     {
         _scrapingService = scrapingService;
+        _scheduler = scheduler;
         _logger = logger;
     }
 
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        Observable.Interval(TimeSpan.FromDays(1))
+        Observable.Interval(TimeSpan.FromDays(1), _scheduler)
             .Select(_ => Unit.Default)
             .StartWith(Unit.Default)
-            .Select(x => Observable.FromAsync(async () => await _scrapingService.ScrapeTvMaze(0))
+            .Select(x => Observable.FromAsync(async () => await _scrapingService.ScrapeTvMaze())
                 .Catch<Unit, Exception>(ex =>
                 {
                     _logger.LogError(ex, "Exception occured while scraping tv maze api!");

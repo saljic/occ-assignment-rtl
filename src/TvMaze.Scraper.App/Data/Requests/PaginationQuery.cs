@@ -3,4 +3,4 @@
 namespace TvMaze.Scraper.App.Data.Requests;
 
 [ExcludeFromCodeCoverage]
-public record PaginationQuery(int PageIndex, int ItemCount);
+public sealed record PaginationQuery(int PageIndex, int ItemCount);

@@ -6,8 +6,7 @@
 public interface IScrapingService
 {
     /// <summary>
-    ///     Returns a <see cref="Task" /> which represents the asynchronous operation of scraping the tv maze api from the
-    ///     provided <paramref name="startPage" /> til the last page
+    ///     Returns a <see cref="Task" /> which represents the asynchronous operation of scraping the tv maze api
     /// </summary>
-    Task ScrapeTvMaze(int startPage);
+    Task ScrapeTvMaze();
 }
